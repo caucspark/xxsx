@@ -32,6 +32,10 @@ public class Order {
 		this.Note = " ";
 	}
 	
+	public Order() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public int getOrderId() {
 		return orderId;
 	}
