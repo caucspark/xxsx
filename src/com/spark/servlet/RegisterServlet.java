@@ -5,29 +5,19 @@ package com.spark.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.net.URLEncoder;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Enumeration;
-import java.util.Map;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import org.apache.log4j.Logger;
 
 import com.spark.util.ConnectionFactory;
-import com.spark.util.StringUtils;
 import com.spark.bean.User;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 
 
