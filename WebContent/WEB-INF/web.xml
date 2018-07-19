@@ -10,7 +10,22 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.spark.servlet.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>RUserServlet</servlet-name>
+    <servlet-class>com.spark.servlet.RUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RUserServlet</servlet-name>
+    <url-pattern>/RUserServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>com.spark.servlet.LoginServlet</servlet-class>
@@ -19,7 +34,6 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/Login.do</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Cart</servlet-name>
     <servlet-class>com.spark.servlet.CartServlet</servlet-class>
@@ -28,8 +42,7 @@
     <servlet-name>Cart</servlet-name>
     <url-pattern>/Cart.do</url-pattern>
   </servlet-mapping>
-  
-   <servlet>
+  <servlet>
     <servlet-name>CreateAccount</servlet-name>
     <servlet-class>com.spark.servlet.CreateAccountServlet</servlet-class>
   </servlet>
@@ -37,5 +50,10 @@
     <servlet-name>CreateAccount</servlet-name>
     <url-pattern>/CreateAccount.do</url-pattern>
   </servlet-mapping>
+  
+  
+
+  
+  
   
 </web-app>
