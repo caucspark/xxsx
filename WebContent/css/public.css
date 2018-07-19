@@ -118,7 +118,7 @@ border-radius: 16px;}
 .header{ background:#e0e0e0;}
 .header .wrap{ height:58px; padding:15px 0 5px 0;}
 .logo{ float:left; width:280px; margin-right:10px;}
-.logo a{ display:block; width:145px; height:50px; background:url(../img/header/logo.png) no-repeat left top;}
+.logo a{ display:block; width:145px; height:50px; background:url(../images/header/logo.png) no-repeat left top;}
 /*浮动*/
 .site-nav-fixed{ z-index: 101; display: block; position: fixed; _position: absolute;  top:0; left:0; width: 100%; height:30px;}
 .header_fixed{ z-index: 100; display: block; position: fixed; _position: absolute;  top:30px; left:0; width: 100%; height:46px; height:60px\9; background:url(../images/header/header_fixed_bg.png) repeat;}

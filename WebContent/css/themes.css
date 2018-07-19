@@ -1,10 +1,10 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 body{ color:#444;}
 .w{ background: #f7f8f8;}
 a:hover{ color: #008842; }
-.logo a{ width: 195px; height: 50px; background:url(img/logo.png) no-repeat;}
+.logo a{ width: 195px; height: 50px; background:url(../Content/img/themes/logo.png) no-repeat;}
 
 /* 按钮 */
 .btn-green{background: #008842;}
