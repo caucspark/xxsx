@@ -17,6 +17,8 @@
       <link rel="stylesheet" href="css/nav.css" />
       <link rel="stylesheet" type="text/css" href="css/product_detail.css"/>
       <link rel="stylesheet" type="text/css" href="css/yiguo.css"/>
+      <link rel="stylesheet" type="text/css" href="css/Comment.css"/>
+      <link rel="stylesheet" type="text/css" href="css/CommenDIVx.css"/>
     <script src="http://static01.yiguo.com/www/js/jquery.js"></script>
     <script>
         yg_x = new Date();
@@ -33,8 +35,123 @@
     	}
     </script>-->
     <script type="text/javascript" src="js/Picture.js"></script>
+     <script src="js/mycommon.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    
+	function getcart() {//向购物车添加数据
+		var NumInput=document.getElementById("p_number");
+		var ProId=document.getElementById("Amount");
+    	var resultNum=NumInput.value;
+    	var resultId=ProId.innerHTML;
+		$.ajax({
+			type : "post",
+			url : "getInfo.do?action=submitCart",
+			data:{"ProductNum":resultNum,"ProductId":resultId},
+			success : function(data) {//{"age":0,"id":0,"password":"12345","userName":"王五"}
+				alert('我在购物车等你哦！');
+			}
+		});
+	}
+	function getCommentvalue(){//获取评论
+		var ProId=document.getElementById("Amount");
+		var resultId=ProId.innerHTML;
+		$.ajax({
+			type : "post",
+			url : "getComment.do?action=ALLITEMS",
+			data:{"ProductId":resultId},
+			success : function(data) {//{"age":0,"id":0,"password":"12345","userName":"王五"}
+				adddiv(data);
+			}
+		});
+	}
+	function adddiv(data){
+		var maindiv=document.getElementById("maindiv");
+		maindiv.innerHTML="";
+		for(var a=0;a<data.length;a++){	
+		var div1=document.createElement("div");
+		var table1=document.createElement("table");
+		var tr1=document.createElement("tr");
+		var tr2=document.createElement("tr");
+		var td1=document.createElement("td");
+		var img1=document.createElement("img");
+		var td2=document.createElement("td");
+		var td3=document.createElement("td");
+		var td4=document.createElement("td");
+		div1.className="Creatediv";
+		table1.className="Creattable";
+		img1.className="CreateImg";
+		div1.appendChild(table1);
+		table1.appendChild(tr1);
+		tr1.appendChild(td1);
+		img1.src="images/19dcf711ac26e2dbc91ef50ece180dd6.jpg";//用户头像
+		td1.appendChild(img1);
+		td2.innerText=data[a].commentdetail;
+		td2.rowSpan="2";
+		td2.className="td2";
+		tr1.appendChild(td2);
+		td4.innerText=data[a].point;
+		td4.rowSpan="2";
+		td4.className="tdx";
+		tr1.appendChild(td4);
+		table1.appendChild(tr2);
+		tr2.appendChild(td3);
+		td3.className="td3";
+		td3.innerText="小象用户:"+data[a].userId;
+		document.getElementById("maindiv").appendChild(div1);
+		}
+		var div2=document.createElement("div");
+		var btnPer=document.createElement("input");
+		var btnNex=document.createElement("input");
+		btnNex.setAttribute('type', 'button');
+		btnPer.setAttribute('type', 'button');
+		btnNex.className="btn";
+		btnPer.className="btn";
+		btnPer.value="上一页";
+		btnNex.value="下一页";
+		div2.appendChild(btnNex);
+		div2.appendChild(btnPer);
+		document.getElementById("maindiv").appendChild(div2);
+		btnPer.onclick=function(){getCommentPerPage();};
+		btnNex.onclick=function(){getCommentNextPage();};
+	}
+	function getCommentNextPage(){//获取下一页评论
+		var ProId=document.getElementById("Amount");
+		var resultId=ProId.innerHTML;
+		$.ajax({
+			type : "post",
+			url : "getComment.do?action=next",
+			data:{"ProductId":resultId},
+			success : function(data) {//{"age":0,"id":0,"password":"12345","userName":"王五"}
+			//获取评论的结果list
+				//alert(data);
+				if(data[0].commentdetail=="#END#"){
+					alert("已到尾页");
+				}else{
+					adddiv(data);
+				}
+			}
+		});
+	}
+	function getCommentPerPage(){//获取上一页评论
+		var ProId=document.getElementById("Amount");
+		var resultId=ProId.innerHTML;
+		$.ajax({
+			type : "post",
+			url : "getComment.do?action=per",
+			data:{"ProductId":resultId},
+			success : function(data) {//{"age":0,"id":0,"password":"12345","userName":"王五"}
+			//获取评论的结果list
+				//alert(data);
+				if(data[0].commentdetail=="#START#"){
+					alert("已到首页");
+				}else{
+					adddiv(data);
+				}
+			}
+		});
+	}
+</script>
 </head>
-
 <body id="body">
 <%Product product=(Product)request.getAttribute("product"); %>
 <%
@@ -792,10 +909,12 @@
                             <div class="dd">
                                 <div class="spinner">
                                     <button class="decrease" id="decreasebutton" onclick="decreasecount()">-</button>
-                                    <input type="text" class="spinner value" id="p_number" maxlength="2" value="0">
+                                    <form>
+                                    <input type="text" class="spinner value" id="p_number" name="Numofchang" maxlength="2" value="0">
+                                    </form>
                                     <button class="increase" id="increasebutton" onclick="increasecount()">+</button>
                                 </div>
-                            <div class="addcart"><a class="btn-gn" href="javascript:;" onclick="G.app.cart.module.addToCart(this,'1399033',$('#p_number').val(),app.referCart);">
+                            <div class="addcart"><a class="btn-gn" href="javascript:;" onclick="G.app.cart.module.addToCart(this,'1399033',$('#p_number').val(),app.referCart);getcart()">
                             <i><img src="img/guowuche.png"></i>加入购物车</a></div>
                             </div>
                         </div>
@@ -808,7 +927,7 @@
                         <table width="100%" cellspacing="0" cellpadding="0" border="0" class="zx">
                             <tbody>
                                     <tr><th>原产地：</th><td><%=product.getProductPlace()%></td></tr>
-                                <tr><th>商品编号：</th><td><%=product.getProductId() %></td></tr>
+                                <tr><th>商品编号：</th><td id="Amount"><%=product.getProductId() %></td></tr>
                                     <tr><th>品牌：</th><td><%=product.getProductBanner() %></td></tr>
                                 <tr><th>发货地：</th><td><%=product.getShippingAddress() %>></td></tr>
                                 
@@ -1046,71 +1165,92 @@
             <div id="GetHotCommodity"></div>
             
             <!--商品详情-->
-            <div class="product-detail">
-                <div class="detail-tab">
-                    <ul class="detail-ul">
-                        <li class="active"><a href="#details">商品详情</a></li>
-                        <li><a href="#comment">用户评论<b>777</b></a></li>
+             <div class="comment-mymain">
+                <div class="Option1">
+                    <ul >
+                        <li class="Option2" style="border-bottom:none ;" onclick="getdetail()" id="tabA1"><a href="#ProductDetail"><strong>商品详情</strong></a></li>
+                        <li onclick="getCommentvalue();getcomment()" id="tabA2"><a href="#ProductComment"><strong>用户评论</strong><<b>777</b>></a></li>
                     </ul>
-                            <div class="addcart"><a href="javascript:;" onclick="G.app.cart.module.addToCart(this,'1399033',$('#p_number').val(),app.referCart);">加入购物车</a></div>
                 </div>
-                <div class="detail-content">
+                <div class="">
                     <!--商品详情-->
-                    <div class="detail-item details clearfix" id="details">
-                        <div id="ProductAttribute"></div>
-                        
-<p><img class="lazy" data-original="http://img10.yiguoimg.com/d/images/2018/180510/513691881066570922_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img10.yiguoimg.com/d/images/2018/180510/513691881066603690_880x406.jpg" style=""/></p><p><img class="lazy" data-original="http://img12.yiguoimg.com/d/images/2018/180510/513691881066636458_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img12.yiguoimg.com/d/images/2018/180510/513691881066701994_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img12.yiguoimg.com/d/images/2018/180510/513691881066669226_880x406.jpg" style=""/></p><p><img class="lazy" data-original="http://img12.yiguoimg.com/d/images/2018/180510/513691881067029674_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img10.yiguoimg.com/d/images/2018/180510/513691881066734762_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img13.yiguoimg.com/d/images/2018/180510/513691881066767530_880x406.jpg" style=""/></p><p><img class="lazy" data-original="http://img09.yiguoimg.com/d/images/2018/180510/513691881066800298_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img12.yiguoimg.com/d/images/2018/180510/513691881066833066_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img13.yiguoimg.com/d/images/2018/180510/513691881066865834_880x406.jpg" style=""/></p><p><img class="lazy" data-original="http://img09.yiguoimg.com/d/images/2018/180510/513691881066898602_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img11.yiguoimg.com/d/images/2018/180510/513691881066931370_880x407.jpg" style=""/></p><p><img class="lazy" data-original="http://img13.yiguoimg.com/d/images/2018/180510/513691881066964138_880x406.jpg" style=""/></p><p><img class="lazy" data-original="http://img10.yiguoimg.com/d/images/2018/180510/513691881066996906_880x407.jpg" style=""/></p><p><br/></p>                        
-                                                <p><img class="lazy" width="880" data-original="http://img13.yiguoimg.com/d/images/2017/171027/513691872596960091_1125x414.jpg" style="display: block;"
-     src="http://img13.yiguoimg.com/d/images/2017/171027/513691872596960091_1125x414.jpg"></p>
+                    <div class="" id="ProductDetail" style="display: block;">
+                    	<div class="describepic"><img src="<%=request.getAttribute("pic2") %>"/></div>
+                        <div class="describedetail" id=""><p><%=product.getDescrible() %></p></div>
                     </div>
-                    <!--用户评论-->
-                    <div class="detail-item " id="comment" style="display:none;">
-                        <div class="comment-info clearfix">
-                            <div class="score">总体满意度<b>5.0<span>分</span></b>(共有<strong>777</strong>人评论)</div>
-                            <div class="percent">
-                                <ul class="slip">
-                                    <li><b>好评</b><span w="" style="width: 0%;"></span><i></i></li>
-                                    <li><b>中评</b><span w="" style="width:0%;"></span><i></i></li>
-                                    <li><b>差评</b><span w="" style="width:0%;"></span><i></i></li>
-                                </ul>
-                            </div>
-                            <div class="comment-btn">
-                                前5位评论用户可获得更高悠币奖励
-                                <a class="btn-gn" id="commentBtn">我要评论</a>
-                                <p>只有购买过该商品的用户才能评论</p>
-                            </div>
-                        </div>
-                        <div class="comment-list clearfix">
-                            <div class="comment-tab-wrap clearfix">
-                                <div class="comment-tab">
-                                    <span class="on" _votetype="0">全部评论（<font id="vote_all"></font>）</span>
-                                    <span _votetype="1">好评（<font id="vote_hp"></font>）</span>
-                                    <span _votetype="2">中评（<font id="vote_zp"></font>）</span>
-                                    <span _votetype="3">差评（<font id="vote_cp"></font>）</span>
-                                    <span _votetype="4">有晒单（<font id="vote_st"></font>）</span>
-                                </div>
-                                <div class="extra">
-                                    <span class="">
-                                        <select id="commontsort">
-                                            <option value="0">按默认</option>
-                                            <option value="1">按时间</option>
-                                        </select>
-                                    </span>
-                                    <span class="sort"><label><input type="checkbox" value="1" id="commenthascontent" checked="checked">有内容</label></span>
-                                </div>
-                            </div>
-
-                            <div id="ProductCommentVote">
-                                <div _votetype="0"></div>
-                                <div _votetype="1" style="display:none;"></div>
-                                <div _votetype="2" style="display:none;"></div>
-                                <div _votetype="3" style="display:none;"></div>
-                                <div _votetype="4" style="display:none;"></div>
-                            </div>
-                        </div>
+                    <!--
+                    	作者：offline
+                    	时间：2018-07-14
+                    	描述:评价
+                    -->
+                    <div id="ProductComment" style="display: none;">
+                    	<div class="Option3">
+                    		<ul class="">
+                        		<li onclick="getgoodpage()" id="tabB1"><a href="#ProductComment"><strong>好评</strong><<b><strong>888</strong></b>></a></li>
+                        		<li onclick="getbadpage()" id="tabB2"><a href="#ProductComment"><strong>差评</strong><<b>777</b>></a></li>
+                        		<li onclick="getnomalpage()" id="tabB3"><a href="#ProductComment"><strong>中评</strong><<b>777</b>></a></li>
+                    		</ul>	
+                    	</div><hr id="split">
+                    	<!--
+                        	作者：offline
+                        	时间：2018-07-15
+                        	描述：中间代码jsp页面实现
+                        -->
+                    	<div id="maindiv"></div>
                     </div>
+                    <!--用户评论--------------------------------------------------------------->
+        <!--<script type="text/javascript">
+		var divdetail=document.getElementById("ProductDetail");
+		var divcom=document.getElementById("ProductComment");
+		function getdetail(){
+			divdetail.style.display="block";
+			divcom.style.display="none";
+		}
+		function getcomment(){
+			divdetail.style.display="none";
+			divcom.style.display="block";
+		}
+		</script>-->
+		<script type="text/javascript">
+			var Mypic1=document.getElementById("tabA1");
+			var Mypic2=document.getElementById("tabA2");
+			var Mypic3=document.getElementById("tabB1");
+			var Mypic4=document.getElementById("tabB2");
+			var Mypic5=document.getElementById("tabB3");
+					window.onload=Mypic1.onmouseover=function(){
+						Mypic1.style.backgroundColor="#CCCCCC";
+					}
+					window.onload=Mypic1.onmouseleave=function(){
+						Mypic1.style.backgroundColor="#FFFFFF";
+					}
+					window.onload=Mypic2.onmouseover=function(){
+					//alert('and you !');
+						Mypic2.style.backgroundColor="#CCCCCC";
+					}
+					window.onload=Mypic2.onmouseleave=function(){
+						Mypic2.style.backgroundColor="#FFFFFF";
+					}
+					window.onload=Mypic3.onmouseover=function(){
+						Mypic3.style.backgroundColor="#CCCCCC";
+					}
+					window.onload=Mypic3.onmouseleave=function(){
+						Mypic3.style.backgroundColor="#FFFFFF";
+					}
+					window.onload=Mypic4.onmouseover=function(){
+						Mypic4.style.backgroundColor="#CCCCCC";
+					}
+					window.onload=Mypic4.onmouseleave=function(){
+						Mypic4.style.backgroundColor="#FFFFFF";
+					}
+					window.onload=Mypic5.onmouseover=function(){
+						Mypic5.style.backgroundColor="#CCCCCC";
+					}
+					window.onload=Mypic5.onmouseleave=function(){
+						Mypic5.style.backgroundColor="#FFFFFF";
+					}
+		</script>
                 </div>
-            </div>
+            </div>        
         </div>
     </div>
 </div>

@@ -8,32 +8,26 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class GetinfoServlet
+ * Servlet implementation class SubmitCartServlet
  */
-@WebServlet("/GetinfoServlet")
-public class GetinfoServlet extends HttpServlet {
+@WebServlet("/SubmitCartServlet")
+public class SubmitCartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GetinfoServlet() {
+    public SubmitCartServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//doPost(request, response);
-//		String goodsId=(String) request.getAttribute("goodsid");
-//		request.getParameter("goodsid");
-		System.out.println(request.getQueryString());
-		request.getRequestDispatcher("goodsid");
-		System.out.println(request.getAttribute("goodsid"));
-		request.getRequestDispatcher("GoodsDetail.jsp").forward(request, response);
+		doPost(request, response);
 	}
 
 	/**
@@ -41,10 +35,13 @@ public class GetinfoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
-		String goodsId=(String) request.getAttribute("goodsid");
-		System.out.println(goodsId);
-		request.getRequestDispatcher("Goodsdetail.jsp").forward(request, response);
+		//获得UserId
+		int userId=1;
+		//前端获得需要处理的参数 =商品的数量=商品的名称=商品的id
+		//int productId=request.getParameter("");
+		//查询购物车表
+		
+
 	}
 
 }

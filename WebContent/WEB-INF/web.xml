@@ -50,15 +50,6 @@
     <url-pattern>/CreateAccount.do</url-pattern>
   </servlet-mapping>
   
-<servlet>
-    <servlet-name>ProductinfoServlet</servlet-name>
-    <servlet-class>com.spark.servlet.ProductinfoServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ProductinfoServlet</servlet-name>
-    <url-pattern>/getInfo.do</url-pattern>
-  </servlet-mapping>
-  
   <servlet>
     <servlet-name>ShowOrder</servlet-name>
     <servlet-class>com.spark.servlet.ShowOrderServlet</servlet-class>
@@ -67,5 +58,20 @@
     <servlet-name>ShowOrder</servlet-name>
     <url-pattern>/ShowOrder.do</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>ProductinfoServlet</servlet-name>
+    <servlet-class>com.spark.servlet.ProductinfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProductinfoServlet</servlet-name>
+    <url-pattern>/getInfo.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CommentServlet</servlet-name>
+    <servlet-class>com.spark.servlet.CommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommentServlet</servlet-name>
+    <url-pattern>/getComment.do</url-pattern>
+  </servlet-mapping>
 </web-app>

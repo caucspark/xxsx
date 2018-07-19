@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.log4j.Logger;
+
 import com.spark.bean.CartDetail;
 import com.spark.bean.ProductOfCart;
 import com.spark.dao.CartDao;
 import com.spark.dao.CartDetailDao;
+import com.spark.dao.Logdao;
 import com.spark.dao.ProductDao;
 /**
  * 
@@ -21,6 +24,67 @@ import com.spark.dao.ProductDao;
 public class CartService {
 	
 	
+	private static Logger log=Logger.getLogger(CartService.class);
+	public boolean isCartExit(int userId){
+		CartDao cartDao= new CartDao();
+		if(cartDao.getCartidByUserid(userId)==0){
+			return false;
+		}
+		return true;
+	}
+	public boolean isProExit(int userId,int ProductId) {
+		CartDao cartDao =new CartDao();
+		CartDetailDao cartDetailDao=new CartDetailDao();
+		if(cartDetailDao.getProductIdByCartId(cartDao.getCartidByUserid(userId))==ProductId){
+			return true;
+		}
+		return false;
+	}
+	/*
+	 * 更改商品数量
+	 */
+	public void UpdateNum(int num,int userId) {
+		int rs=0;
+		CartDao cartDao=new CartDao();
+		CartDetailDao cartDetailDao=new CartDetailDao();
+		int CartId=cartDao.getCartidByUserid(userId);
+		int ProductId=cartDetailDao.getProductIdByCartId(CartId);
+		int oldNum=cartDetailDao.getProductNum(CartId, ProductId);
+		rs=oldNum+num;
+		int result=cartDetailDao.insertProNum(rs, CartId, ProductId);
+		if(result>0){
+			Logdao logdao=new Logdao();
+			log.debug(userId+" "+logdao.getBigNameByProductId(ProductId)+" "+num);
+		}
+	}
+	/*
+	 * 添加商品
+	 */
+	public void addPro(int userId,int num,int ProductId){
+		CartDao cartDao=new CartDao();
+		CartDetailDao cartDetailDao=new CartDetailDao();
+		cartDao.getCartidByUserid(userId);
+		int result=cartDetailDao.insertPro(cartDao.getCartidByUserid(userId), ProductId, num);
+		if(result>0){
+			Logdao logdao=new Logdao();
+			log.debug(userId+" "+logdao.getBigNameByProductId(ProductId)+" "+num);
+		}
+	}
+	/*
+	 * 添加购物车及商品
+	 */
+	public void addCartAndPro(int userId,int num,int productId){
+		CartDao cartDao=new CartDao();
+		CartDetailDao cartDetailDao=new CartDetailDao();
+		cartDao.insertCart(userId);
+		cartDao.getCartidByUserid(userId);
+		int result=cartDetailDao.insertPro(cartDao.getCartidByUserid(userId), productId, num);
+		if(result>0){
+			Logdao logdao=new Logdao();
+			log.debug(userId+" "+logdao.getBigNameByProductId(productId)+" "+num);
+		}
+	}
+	//
 	public float getTotalPriceByCartid(int cartId) {
 		
 		float totalPrice = 0;

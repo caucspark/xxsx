@@ -61,6 +61,22 @@ public class CartDao {
 		
 		return userId;
 	}
-	
+	public int insertCart(int userId){
+		int rs=0;
+		PreparedStatement pStatement = null;
+		Connection connection = ConnectionFactory.getConnection();
+		String sql = "INSERT INTO cart(Userid) VALUES(?)";
+		
+		try {
+			pStatement = connection.prepareStatement(sql);
+			pStatement.setInt(1, userId);
+			//执行查询
+			rs = pStatement.executeUpdate();
+		} catch (SQLException e) {
+			System.err.println("通过购物车Id获取用户ID失败");
+			e.printStackTrace();
+		}
+		return rs;
+	}
 
 }

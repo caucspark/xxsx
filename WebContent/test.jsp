@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="<%=request.getAttribute("pic1")%>">
-<img src="/xxsx/goodsimg/9288722952299694_500.jpg">
+<form>
+<a href="getInfo.do?goodsid=7">PictureOfgoods</a>
+<%=(String)session.getAttribute("userInfo")%>
+</form>
 </body>
 </html>
