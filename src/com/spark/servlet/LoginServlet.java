@@ -32,7 +32,18 @@ protected int captcha_num[] = new int[4];
 		}
 		
 		if(needVerifyCode.equals("false")) {
-			req.getRequestDispatcher("success.jsp").forward(req, resp);
+			String username="";
+			
+			Cookie[] cookie = req.getCookies();
+			for (int i = 0; i < cookie.length; i++) {
+				Cookie cook = cookie[i];
+				if(cook.getName().equalsIgnoreCase("username")){ //获取键
+					username = cook.getValue().toString();
+				}
+			}
+			HttpSession session = req.getSession();
+			session.setAttribute("userInfo", username);
+			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		}else {
 			CAPTCHAFactory cFactory = new CAPTCHAFactory();
 			CAPTCHA ca = cFactory.nextCAPTCHA();
