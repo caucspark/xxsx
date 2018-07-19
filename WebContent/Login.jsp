@@ -123,7 +123,7 @@
                 <div class="wrap clearfix">
                     <div class="fl">
                         <a href="http://www.xiaoxiang.com" target="_blank">
-                            <img width="666" height="418" src="img/guanggao.png">
+                            <img width="666" height="418" style="margin-top:0px;" src="img/guanggao.png">
                         </a>
                     </div>
                     <div class="fr">
@@ -132,7 +132,7 @@
                             <p>
                                 <strong>欢迎登录</strong>
                                 <span>还没有账号？
-                                    <a class="green" href="/Register">立即注册</a>
+                                    <a class="green" href="./register.jsp">立即注册</a>
                                 </span>
                             </p>
 

@@ -13,13 +13,10 @@
 		<link rel="shortcut icon" herf="img/logo.jpg" />
 		<link rel="stylesheet" href="css/public.css" />
 		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_616446_b72zo42zus9.css"/>
-		<!--<link rel="stylesheet" href="css/customer.css" />-->
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/nav.css" />
 
-		<!--<script type="text/javascript" src="js/jquery-1.11.2.min.js" ></script>-->
-		<!--<script src="js/jquery-1.12.1.min.js" type="text/javascript" charset="utf-8"></script>-->
-		<script src="http://static01.yiguo.com/www/js/jquery.js"></script>
+		<script src="js/xiaoxiangjquery.js"></script>
 		<script>
 			yg_x = new Date();
 			var yw_data = {};
@@ -397,55 +394,12 @@
 						<!--送货城市 结束-->
 					</ul>
 					<ul class="fr">
-
-						<!-- <li class="TEL">
-							<a rel="" href="http://home.yiguo.com/Trade/OnlineDelivery" target="_blank"><i></i>礼品兑换券入口</a>
-						</li>
-						<li class="pay">
-							<a rel="" href="http://home.yiguo.com/Recharge/Index" target="_blank"><i></i>储值卡</a>
-						</li> -->
-
-						<li class="mobile">
-							<!--<div class="tit"><a href="javascript:void(0)"><i></i>手机易果<s></s></a></div>
-                        <div class="con">
-                            <div class="item"><img src="http://static01.yiguo.com/www/images/header/qrcode_app.jpg" width="125" height="125"><span>扫一扫下载APP</span></div>
-                            <div class="item"><img src="http://static01.yiguo.com/www/images/header/qrcode_wechat.jpg" width="125" height="125"><span>易果生鲜微信</span></div>
-                        </div>-->
-						</li>
-						<!-- <li class="myyiguo"> -->
-
-							 <!-- <div class="tit">
-								<a rel="nofollow" href="http://home.yiguo.com" target="_blank"><i></i>我的易果<s></s></a>
-							</div> --> 
-							<!--<div class="con">
-								<a rel="nofollow" href="http://home.yiguo.com/Trade/OrderList">我的订单</a>
-								<a rel="nofollow" href="http://home.yiguo.com/Trade/MyCoupons">我的优惠券<b id="coupon">0</b></a>
-								<a rel="nofollow" href="http://home.yiguo.com/Trade/MyCollection">我的收藏</a>
-								<a rel="nofollow" href="http://home.yiguo.com/Trade/UMoney">我的悠币</a>
-								<a rel="nofollow" href="http://home.yiguo.com/Trade/BackOrder">我的退换货</a>
-								<a rel="nofollow" href="http://home.yiguo.com/Account/Balance">预存款查询</a>
-								<a rel="nofollow" href="http://event.yiguo.com/activity/">立即充值</a>
-								<a rel="nofollow" href="javascript:;" class="logout" style="display:none;">退出</a>
-							</div>-->
-						<!-- </li>
-						<li id="logout" style="display:none">
-							<a href="javascript:;" class="logout">[退出]</a>
-						</li>
-						<li id="loginname" style="">
-							<a rel="nofollow" href="http://home.yiguo.com"></a>
-						</li>
-						<li id="register" style="">
-							<a rel="nofollow" href="./register.jsp">[注册]</a>
-						</li>
-						<li id="login" style="">
-							<a rel="nofollow" href="./Login.jsp">[登录]</a>
-						</li> -->
 						
 						<div class="loginregister" style="margin-top: 8px;">
 							<a id="register11" style="margin-right: 18px;" rel="nofollow " href="./register.jsp ">[注册]</a>
 							<a id="login11" href="./Login.jsp ">[登录]</a>
 							
-							<a id="register22"  style="margin-right: 18px; display: none;"  href="./register.jsp ">用户：[</a>
+							<a id="register22"  style="margin-right: 18px; display: none;"  href="ShowOrder.do ">用户：[</a>
 							<a id="login22" style="display: none;" onclick="desession();" href="./index.jsp ">[退出]</a>
 							
 						</div>
@@ -459,7 +413,7 @@
 				<div class="wrap">
 					<div class="logo">
 
-						<a href="http://www.yiguo.com"><img src="img/logo.png" /></a>
+						<a href="http://www.xiaoxiang.com"><img src="img/logo.png" /></a>
 					</div>
 					<!--搜索 开始-->
 					<div class="search" style="position:relative;">
@@ -481,7 +435,7 @@
 					<!--购物车 开始-->
 					<div class="shopping-cart">
 						<dl>
-							<dt class="shopping-btn"><a href="http://cart.yiguo.com/"> <span class="totleNum"><b>0</b></span><b class="totlePrice">0.0</b></a></dt>
+							<dt class="shopping-btn"><a href="http://cart.xiaoxiang.com/"> <span class="totleNum"><b>0</b></span><b class="totlePrice">0.0</b></a></dt>
 							<dd class="shopping-list">
 								<div class="spacer"></div>
 								<div class="nogoods" style="display:none;">
@@ -493,7 +447,7 @@
 									<div class="price-total">
 										<div><span class="totleNum">共<b>0</b>件商品</span><span>共计<b class="totlePrice">¥0.00</b></span></div>
 										<div>
-											<a href="http://cart.yiguo.com/" class="settleup">去购物车</a>
+											<a href="http://cart.xiaoxiang.com/" class="settleup">去购物车</a>
 										</div>
 									</div>
 								</div>
@@ -517,196 +471,196 @@
 						</div>
 						<div class="catalogs-list" style="display:none">
 							<div class="item">
-								<h3 class="t01_channelhome"><a href="http://www.yiguo.com/products/01_channelhome.html"><i></i>进口水果<s>></s></a></h3>
+								<h3 class="t01_channelhome"><a href="http://www.xiaoxiang.com/products/01_channelhome.html"><i></i>进口水果<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/01_channelhome.html">进口水果</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/01_channelhome.html">进口水果</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0101_qiyiguo.html" target="_blank">奇异果</a>
-										<a href="http://www.yiguo.com/products/0102_chilizi.html" target="_blank">车厘子</a>
-										<a href="http://www.yiguo.com/products/0104_li.html" target="_blank">李</a>
-										<a href="http://www.yiguo.com/products/0107_niuyouguo.html" target="_blank">牛油果</a>
-										<a href="http://www.yiguo.com/products/0108_tizi.html" target="_blank">提子</a>
-										<a href="http://www.yiguo.com/products/0109_pingguo.html" target="_blank">苹果</a>
-										<a href="http://www.yiguo.com/products/0110_li.html" target="_blank">梨</a>
-										<a href="http://www.yiguo.com/products/0111_ganjuchengyou.html" target="_blank">柑桔橙柚</a>
-										<a href="http://www.yiguo.com/products/0112_shanzhu.html" target="_blank">山竹</a>
-										<a href="http://www.yiguo.com/products/0113_xiangjiao.html" target="_blank">香蕉</a>
-										<a href="http://www.yiguo.com/products/0114_huolongguo.html" target="_blank">火龙果</a>
-										<a href="http://www.yiguo.com/products/0115_yezi.html" target="_blank">椰子</a>
-										<a href="http://www.yiguo.com/products/0116_mangguo.html" target="_blank">芒果</a>
-										<a href="http://www.yiguo.com/products/0117_fengli.html" target="_blank">凤梨</a>
-										<a href="http://www.yiguo.com/products/0118_liulian.html" target="_blank">榴莲</a>
-										<a href="http://www.yiguo.com/products/0119_tropical.html" target="_blank">热带水果</a>
-										<a href="http://www.yiguo.com/products/0120_season.html" target="_blank">时令水果</a>
-										<a href="http://www.yiguo.com/products/0121_yuanxiang.html" target="_blank">原箱水果</a>
+										<a href="http://www.xiaoxiang.com/products/0101_qixiaoxiang.html" target="_blank">奇异果</a>
+										<a href="http://www.xiaoxiang.com/products/0102_chilizi.html" target="_blank">车厘子</a>
+										<a href="http://www.xiaoxiang.com/products/0104_li.html" target="_blank">李</a>
+										<a href="http://www.xiaoxiang.com/products/0107_niuyouguo.html" target="_blank">牛油果</a>
+										<a href="http://www.xiaoxiang.com/products/0108_tizi.html" target="_blank">提子</a>
+										<a href="http://www.xiaoxiang.com/products/0109_pingguo.html" target="_blank">苹果</a>
+										<a href="http://www.xiaoxiang.com/products/0110_li.html" target="_blank">梨</a>
+										<a href="http://www.xiaoxiang.com/products/0111_ganjuchengyou.html" target="_blank">柑桔橙柚</a>
+										<a href="http://www.xiaoxiang.com/products/0112_shanzhu.html" target="_blank">山竹</a>
+										<a href="http://www.xiaoxiang.com/products/0113_xiangjiao.html" target="_blank">香蕉</a>
+										<a href="http://www.xiaoxiang.com/products/0114_huolongguo.html" target="_blank">火龙果</a>
+										<a href="http://www.xiaoxiang.com/products/0115_yezi.html" target="_blank">椰子</a>
+										<a href="http://www.xiaoxiang.com/products/0116_mangguo.html" target="_blank">芒果</a>
+										<a href="http://www.xiaoxiang.com/products/0117_fengli.html" target="_blank">凤梨</a>
+										<a href="http://www.xiaoxiang.com/products/0118_liulian.html" target="_blank">榴莲</a>
+										<a href="http://www.xiaoxiang.com/products/0119_tropical.html" target="_blank">热带水果</a>
+										<a href="http://www.xiaoxiang.com/products/0120_season.html" target="_blank">时令水果</a>
+										<a href="http://www.xiaoxiang.com/products/0121_yuanxiang.html" target="_blank">原箱水果</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/01_channelhome.html"><img src="img/9570160763248445.png" alt="进口水果"></a>
+										<a href="http://www.xiaoxiang.com/products/01_channelhome.html"><img src="img/9570160763248445.png" alt="进口水果"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t02_channelhome"><a href="http://www.yiguo.com/products/02_channelhome.html"><i></i>国产水果<s>></s></a></h3>
+								<h3 class="t02_channelhome"><a href="http://www.xiaoxiang.com/products/02_channelhome.html"><i></i>国产水果<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/02_channelhome.html">国产水果</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/02_channelhome.html">国产水果</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0201_pingguo.html" target="_blank">苹果</a>
-										<a href="http://www.yiguo.com/products/0202_li.html" target="_blank">梨</a>
-										<a href="http://www.yiguo.com/products/0203_yingtao.html" target="_blank">樱桃</a>
-										<a href="http://www.yiguo.com/products/0204_ganjuchengyou.html" target="_blank">柑桔橙柚</a>
-										<a href="http://www.yiguo.com/products/0206_gua.html" target="_blank">瓜</a>
-										<a href="http://www.yiguo.com/products/0207_putao.html" target="_blank">葡萄</a>
-										<a href="http://www.yiguo.com/products/0208_tao.html" target="_blank">桃</a>
-										<a href="http://www.yiguo.com/products/0209_li.html" target="_blank">李</a>
-										<a href="http://www.yiguo.com/products/0212_mangguo.html" target="_blank">芒果</a>
-										<a href="http://www.yiguo.com/products/0213_fengli.html" target="_blank">凤梨</a>
-										<a href="http://www.yiguo.com/products/0215_bale.html" target="_blank">芭乐</a>
-										<a href="http://www.yiguo.com/products/0216_baixiangguo.html" target="_blank">百香果</a>
-										<a href="http://www.yiguo.com/products/0217_tropical.html" target="_blank">热带水果</a>
-										<a href="http://www.yiguo.com/products/0218_season.html" target="_blank">时令水果</a>
-										<a href="http://www.yiguo.com/products/0219_yuanxiang.html" target="_blank">原箱水果</a>
+										<a href="http://www.xiaoxiang.com/products/0201_pingguo.html" target="_blank">苹果</a>
+										<a href="http://www.xiaoxiang.com/products/0202_li.html" target="_blank">梨</a>
+										<a href="http://www.xiaoxiang.com/products/0203_yingtao.html" target="_blank">樱桃</a>
+										<a href="http://www.xiaoxiang.com/products/0204_ganjuchengyou.html" target="_blank">柑桔橙柚</a>
+										<a href="http://www.xiaoxiang.com/products/0206_gua.html" target="_blank">瓜</a>
+										<a href="http://www.xiaoxiang.com/products/0207_putao.html" target="_blank">葡萄</a>
+										<a href="http://www.xiaoxiang.com/products/0208_tao.html" target="_blank">桃</a>
+										<a href="http://www.xiaoxiang.com/products/0209_li.html" target="_blank">李</a>
+										<a href="http://www.xiaoxiang.com/products/0212_mangguo.html" target="_blank">芒果</a>
+										<a href="http://www.xiaoxiang.com/products/0213_fengli.html" target="_blank">凤梨</a>
+										<a href="http://www.xiaoxiang.com/products/0215_bale.html" target="_blank">芭乐</a>
+										<a href="http://www.xiaoxiang.com/products/0216_baixiangguo.html" target="_blank">百香果</a>
+										<a href="http://www.xiaoxiang.com/products/0217_tropical.html" target="_blank">热带水果</a>
+										<a href="http://www.xiaoxiang.com/products/0218_season.html" target="_blank">时令水果</a>
+										<a href="http://www.xiaoxiang.com/products/0219_yuanxiang.html" target="_blank">原箱水果</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/02_channelhome.html"><img src="img/9570160763379517.png" alt="国产水果"></a>
+										<a href="http://www.xiaoxiang.com/products/02_channelhome.html"><img src="img/9570160763379517.png" alt="国产水果"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t05_channelhome"><a href="http://www.yiguo.com/products/05_channelhome.html"><i></i>精选肉类<s>></s></a></h3>
+								<h3 class="t05_channelhome"><a href="http://www.xiaoxiang.com/products/05_channelhome.html"><i></i>精选肉类<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/05_channelhome.html">精选肉类</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/05_channelhome.html">精选肉类</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0501_jinkouniurou.html" target="_blank">进口牛肉</a>
-										<a href="http://www.yiguo.com/products/0502_guochanniurou.html" target="_blank">国产牛肉</a>
-										<a href="http://www.yiguo.com/products/0503_zhurou.html" target="_blank">猪肉</a>
-										<a href="http://www.yiguo.com/products/0504_yangrou.html" target="_blank">羊肉</a>
-										<a href="http://www.yiguo.com/products/0505_xiangchang.html" target="_blank">香肠</a>
-										<a href="http://www.yiguo.com/products/0506_huotui.html" target="_blank">火腿/培根</a>
-										<a href="http://www.yiguo.com/products/0507_rouzhipin.html" target="_blank">肉制品</a>
+										<a href="http://www.xiaoxiang.com/products/0501_jinkouniurou.html" target="_blank">进口牛肉</a>
+										<a href="http://www.xiaoxiang.com/products/0502_guochanniurou.html" target="_blank">国产牛肉</a>
+										<a href="http://www.xiaoxiang.com/products/0503_zhurou.html" target="_blank">猪肉</a>
+										<a href="http://www.xiaoxiang.com/products/0504_yangrou.html" target="_blank">羊肉</a>
+										<a href="http://www.xiaoxiang.com/products/0505_xiangchang.html" target="_blank">香肠</a>
+										<a href="http://www.xiaoxiang.com/products/0506_huotui.html" target="_blank">火腿/培根</a>
+										<a href="http://www.xiaoxiang.com/products/0507_rouzhipin.html" target="_blank">肉制品</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/05_channelhome.html"><img src="img/9570160763445053.png" alt="精选肉类"></a>
+										<a href="http://www.xiaoxiang.com/products/05_channelhome.html"><img src="img/9570160763445053.png" alt="精选肉类"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t06_channelhome"><a href="http://www.yiguo.com/products/06_channelhome.html"><i></i>禽类蛋品<s>></s></a></h3>
+								<h3 class="t06_channelhome"><a href="http://www.xiaoxiang.com/products/06_channelhome.html"><i></i>禽类蛋品<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/06_channelhome.html">禽类蛋品</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/06_channelhome.html">禽类蛋品</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0601_ji.html" target="_blank">鸡</a>
-										<a href="http://www.yiguo.com/products/0602_ya.html" target="_blank">鸭</a>
-										<a href="http://www.yiguo.com/products/0603_egeteseqinlei.html" target="_blank">鹅/鸽/特色禽类</a>
-										<a href="http://www.yiguo.com/products/0604_dan.html" target="_blank">蛋</a>
+										<a href="http://www.xiaoxiang.com/products/0601_ji.html" target="_blank">鸡</a>
+										<a href="http://www.xiaoxiang.com/products/0602_ya.html" target="_blank">鸭</a>
+										<a href="http://www.xiaoxiang.com/products/0603_egeteseqinlei.html" target="_blank">鹅/鸽/特色禽类</a>
+										<a href="http://www.xiaoxiang.com/products/0604_dan.html" target="_blank">蛋</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/06_channelhome.html"><img src="img/9570160763510589.png" alt="禽类蛋品"></a>
+										<a href="http://www.xiaoxiang.com/products/06_channelhome.html"><img src="img/9570160763510589.png" alt="禽类蛋品"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t04_channelhome"><a href="http://www.yiguo.com/products/04_channelhome.html"><i></i>海鲜水产<s>></s></a></h3>
+								<h3 class="t04_channelhome"><a href="http://www.xiaoxiang.com/products/04_channelhome.html"><i></i>海鲜水产<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/04_channelhome.html">海鲜水产</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/04_channelhome.html">海鲜水产</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0401_yu.html" target="_blank">鱼</a>
-										<a href="http://www.yiguo.com/products/0402_sanwenyu.html" target="_blank">三文鱼</a>
-										<a href="http://www.yiguo.com/products/0403_xia.html" target="_blank">虾</a>
-										<a href="http://www.yiguo.com/products/0404_xie.html" target="_blank">蟹</a>
-										<a href="http://www.yiguo.com/products/0405_beilei.html" target="_blank">贝</a>
-										<a href="http://www.yiguo.com/products/0406_huoxian.html" target="_blank">活鲜</a>
-										<a href="http://www.yiguo.com/products/0407_haichanganhuo.html" target="_blank">海产干货</a>
-										<a href="http://www.yiguo.com/products/0408_tesehaichan.html" target="_blank">特色海产</a>
+										<a href="http://www.xiaoxiang.com/products/0401_yu.html" target="_blank">鱼</a>
+										<a href="http://www.xiaoxiang.com/products/0402_sanwenyu.html" target="_blank">三文鱼</a>
+										<a href="http://www.xiaoxiang.com/products/0403_xia.html" target="_blank">虾</a>
+										<a href="http://www.xiaoxiang.com/products/0404_xie.html" target="_blank">蟹</a>
+										<a href="http://www.xiaoxiang.com/products/0405_beilei.html" target="_blank">贝</a>
+										<a href="http://www.xiaoxiang.com/products/0406_huoxian.html" target="_blank">活鲜</a>
+										<a href="http://www.xiaoxiang.com/products/0407_haichanganhuo.html" target="_blank">海产干货</a>
+										<a href="http://www.xiaoxiang.com/products/0408_tesehaichan.html" target="_blank">特色海产</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/04_channelhome.html"><img src="img/9570160763576125.png" alt="海鲜水产"></a>
+										<a href="http://www.xiaoxiang.com/products/04_channelhome.html"><img src="img/9570160763576125.png" alt="海鲜水产"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t08_channelhome"><a href="http://www.yiguo.com/products/08_channelhome.html"><i></i>乳品糕点<s>></s></a></h3>
+								<h3 class="t08_channelhome"><a href="http://www.xiaoxiang.com/products/08_channelhome.html"><i></i>乳品糕点<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/08_channelhome.html">乳品糕点</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/08_channelhome.html">乳品糕点</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0801_nailao.html" target="_blank">奶酪</a>
-										<a href="http://www.yiguo.com/products/0802_huangyounaiyou.html" target="_blank">黄油/奶油</a>
-										<a href="http://www.yiguo.com/products/0803_rusuanyinliao.html" target="_blank">酸奶/乳酸饮料</a>
-										<a href="http://www.yiguo.com/products/0805_mianbao.html" target="_blank">面包</a>
-										<a href="http://www.yiguo.com/products/0806_dangao.html" target="_blank">蛋糕</a>
+										<a href="http://www.xiaoxiang.com/products/0801_nailao.html" target="_blank">奶酪</a>
+										<a href="http://www.xiaoxiang.com/products/0802_huangyounaiyou.html" target="_blank">黄油/奶油</a>
+										<a href="http://www.xiaoxiang.com/products/0803_rusuanyinliao.html" target="_blank">酸奶/乳酸饮料</a>
+										<a href="http://www.xiaoxiang.com/products/0805_mianbao.html" target="_blank">面包</a>
+										<a href="http://www.xiaoxiang.com/products/0806_dangao.html" target="_blank">蛋糕</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/08_channelhome.html"><img src="img/9570160763641661.png" alt="乳品糕点"></a>
+										<a href="http://www.xiaoxiang.com/products/08_channelhome.html"><img src="img/9570160763641661.png" alt="乳品糕点"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t03_channelhome"><a href="http://www.yiguo.com/products/03_channelhome.html"><i></i>新鲜蔬菜<s>></s></a></h3>
+								<h3 class="t03_channelhome"><a href="http://www.xiaoxiang.com/products/03_channelhome.html"><i></i>新鲜蔬菜<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/03_channelhome.html">新鲜蔬菜</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/03_channelhome.html">新鲜蔬菜</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0301_yecailei.html" target="_blank">叶菜类</a>
-										<a href="http://www.yiguo.com/products/0302_genjinglei.html" target="_blank">根茎类</a>
-										<a href="http://www.yiguo.com/products/0303_qieguoguaguolei.html" target="_blank">茄果/瓜果类</a>
-										<a href="http://www.yiguo.com/products/0304_huacaidoulei.html" target="_blank">花菜/豆类</a>
-										<a href="http://www.yiguo.com/products/0306_jungu.html" target="_blank">菌菇</a>
-										<a href="http://www.yiguo.com/products/0307_shalacai.html" target="_blank">沙拉菜</a>
-										<a href="http://www.yiguo.com/products/0308_lengdongshucai.html" target="_blank">冷冻蔬菜</a>
-										<a href="http://www.yiguo.com/products/0309_douzhipin.html" target="_blank">豆制品</a>
-										<a href="http://www.yiguo.com/products/0310_congsuanlei.html" target="_blank">葱蒜类</a>
-										<a href="http://www.yiguo.com/products/0311_shucaizuhe.html" target="_blank">蔬菜组合</a>
+										<a href="http://www.xiaoxiang.com/products/0301_yecailei.html" target="_blank">叶菜类</a>
+										<a href="http://www.xiaoxiang.com/products/0302_genjinglei.html" target="_blank">根茎类</a>
+										<a href="http://www.xiaoxiang.com/products/0303_qieguoguaguolei.html" target="_blank">茄果/瓜果类</a>
+										<a href="http://www.xiaoxiang.com/products/0304_huacaidoulei.html" target="_blank">花菜/豆类</a>
+										<a href="http://www.xiaoxiang.com/products/0306_jungu.html" target="_blank">菌菇</a>
+										<a href="http://www.xiaoxiang.com/products/0307_shalacai.html" target="_blank">沙拉菜</a>
+										<a href="http://www.xiaoxiang.com/products/0308_lengdongshucai.html" target="_blank">冷冻蔬菜</a>
+										<a href="http://www.xiaoxiang.com/products/0309_douzhipin.html" target="_blank">豆制品</a>
+										<a href="http://www.xiaoxiang.com/products/0310_congsuanlei.html" target="_blank">葱蒜类</a>
+										<a href="http://www.xiaoxiang.com/products/0311_shucaizuhe.html" target="_blank">蔬菜组合</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/03_channelhome.html"><img src="img/9570160763772733.png" alt="新鲜蔬菜"></a>
+										<a href="http://www.xiaoxiang.com/products/03_channelhome.html"><img src="img/9570160763772733.png" alt="新鲜蔬菜"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t10_channelhome"><a href="http://www.yiguo.com/products/10_channelhome.html"><i></i>方便速食<s>></s></a></h3>
+								<h3 class="t10_channelhome"><a href="http://www.xiaoxiang.com/products/10_channelhome.html"><i></i>方便速食<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/10_channelhome.html">方便速食</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/10_channelhome.html">方便速食</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/1001_lengdongdianxin.html" target="_blank">冷冻点心</a>
-										<a href="http://www.yiguo.com/products/1003_zhongshizhushi.html" target="_blank">中式主食</a>
-										<a href="http://www.yiguo.com/products/1004_huoguoliao.html" target="_blank">火锅料</a>
-										<a href="http://www.yiguo.com/products/1005_lengcangshushi.html" target="_blank">冷藏熟食</a>
-										<a href="http://www.yiguo.com/products/1006_banchengpincai.html" target="_blank">半成品菜</a>
-										<a href="http://www.yiguo.com/products/1007_yihejiayan.html" target="_blank">易盒家宴</a>
+										<a href="http://www.xiaoxiang.com/products/1001_lengdongdianxin.html" target="_blank">冷冻点心</a>
+										<a href="http://www.xiaoxiang.com/products/1003_zhongshizhushi.html" target="_blank">中式主食</a>
+										<a href="http://www.xiaoxiang.com/products/1004_huoguoliao.html" target="_blank">火锅料</a>
+										<a href="http://www.xiaoxiang.com/products/1005_lengcangshushi.html" target="_blank">冷藏熟食</a>
+										<a href="http://www.xiaoxiang.com/products/1006_banchengpincai.html" target="_blank">半成品菜</a>
+										<a href="http://www.xiaoxiang.com/products/1007_yihejiayan.html" target="_blank">易盒家宴</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/10_channelhome.html"><img src="img/9570160763838269.png" alt="方便速食"></a>
+										<a href="http://www.xiaoxiang.com/products/10_channelhome.html"><img src="img/9570160763838269.png" alt="方便速食"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t07_channelhome"><a href="http://www.yiguo.com/products/07_channelhome.html"><i></i>粮油杂货<s>></s></a></h3>
+								<h3 class="t07_channelhome"><a href="http://www.xiaoxiang.com/products/07_channelhome.html"><i></i>粮油杂货<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/07_channelhome.html">粮油杂货</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/07_channelhome.html">粮油杂货</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0701_mi.html" target="_blank">米</a>
-										<a href="http://www.yiguo.com/products/0702_zaliang.html" target="_blank">杂粮</a>
-										<a href="http://www.yiguo.com/products/0703_mianmianzhipin.html" target="_blank">面/面制品</a>
-										<a href="http://www.yiguo.com/products/0704_you.html" target="_blank">油</a>
-										<a href="http://www.yiguo.com/products/0705_tiaoweiliao.html" target="_blank">调味料</a>
-										<a href="http://www.yiguo.com/products/0706_ganhuo.html" target="_blank">干货</a>
-										<a href="http://www.yiguo.com/products/0707_guoganlingshi.html" target="_blank">果干/零食</a>
+										<a href="http://www.xiaoxiang.com/products/0701_mi.html" target="_blank">米</a>
+										<a href="http://www.xiaoxiang.com/products/0702_zaliang.html" target="_blank">杂粮</a>
+										<a href="http://www.xiaoxiang.com/products/0703_mianmianzhipin.html" target="_blank">面/面制品</a>
+										<a href="http://www.xiaoxiang.com/products/0704_you.html" target="_blank">油</a>
+										<a href="http://www.xiaoxiang.com/products/0705_tiaoweiliao.html" target="_blank">调味料</a>
+										<a href="http://www.xiaoxiang.com/products/0706_ganhuo.html" target="_blank">干货</a>
+										<a href="http://www.xiaoxiang.com/products/0707_guoganlingshi.html" target="_blank">果干/零食</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/07_channelhome.html"><img src="img/9570160757940029.png" alt="粮油杂货"></a>
+										<a href="http://www.xiaoxiang.com/products/07_channelhome.html"><img src="img/9570160757940029.png" alt="粮油杂货"></a>
 									</div>
 								</div>
 							</div>
 							<div class="item">
-								<h3 class="t09_channelhome"><a href="http://www.yiguo.com/products/09_channelhome.html"><i></i>饮料酒水<s>></s></a></h3>
+								<h3 class="t09_channelhome"><a href="http://www.xiaoxiang.com/products/09_channelhome.html"><i></i>饮料酒水<s>></s></a></h3>
 								<div class="sub-item">
-									<h4><a href="http://www.yiguo.com/products/09_channelhome.html">饮料酒水</a></h4>
+									<h4><a href="http://www.xiaoxiang.com/products/09_channelhome.html">饮料酒水</a></h4>
 									<div class="sub-list">
-										<a href="http://www.yiguo.com/products/0901_shui.html" target="_blank">水</a>
-										<a href="http://www.yiguo.com/products/0902_guozhiyinliao.html" target="_blank">果汁/饮料</a>
-										<a href="http://www.yiguo.com/products/0903_chongtiaoyinpin.html" target="_blank">冲调饮品</a>
-										<a href="http://www.yiguo.com/products/0904_jiujiuju.html" target="_blank">葡萄酒/酒具</a>
+										<a href="http://www.xiaoxiang.com/products/0901_shui.html" target="_blank">水</a>
+										<a href="http://www.xiaoxiang.com/products/0902_guozhiyinliao.html" target="_blank">果汁/饮料</a>
+										<a href="http://www.xiaoxiang.com/products/0903_chongtiaoyinpin.html" target="_blank">冲调饮品</a>
+										<a href="http://www.xiaoxiang.com/products/0904_jiujiuju.html" target="_blank">葡萄酒/酒具</a>
 									</div>
 									<div class="catalogs-ad">
-										<a href="http://www.yiguo.com/products/09_channelhome.html"><img src="img/9570160763182909.png" alt="饮料酒水"></a>
+										<a href="http://www.xiaoxiang.com/products/09_channelhome.html"><img src="img/9570160763182909.png" alt="饮料酒水"></a>
 									</div>
 								</div>
 							</div>
@@ -729,7 +683,7 @@
 						</a>
 					</li>
 					<li style="background:#efefef;" _begintime="2018/6/20 18:45:06" _endtime="2018/7/11 23:59:59" _title="香格里拉野生松茸季">
-						<a href="http://www.yiguo.com/product/1103025.html" target="_blank">
+						<a href="http://www.xiaoxiang.com/product/1103025.html" target="_blank">
 							<div class="slider-wrap">
 								<span class="banner-text">
                                 <img height="500" />
@@ -739,7 +693,7 @@
 						</a>
 					</li>
 					<li style="background:#efefef;" _begintime="2018/6/28 0:00:00" _endtime="2018/7/4 23:59:59">
-						<a href="http://www.yiguo.com/activity/sale/6%E6%9C%88%E5%B0%96%E8%B4%A7-%E5%8D%8E%E5%8C%97" target="_blank">
+						<a href="http://www.xiaoxiang.com/activity/sale/6%E6%9C%88%E5%B0%96%E8%B4%A7-%E5%8D%8E%E5%8C%97" target="_blank">
 							<div class="slider-wrap">
 								<span class="banner-text">
                                 <img height="500" />
@@ -749,7 +703,7 @@
 						</a>
 					</li>
 					<li style="background:#efefef;" _begintime="2018/6/15 11:48:44" _endtime="2018/7/7 23:59:59">
-						<a href="http://www.yiguo.com/activity/sale/segai-womiru" target="_blank">
+						<a href="http://www.xiaoxiang.com/activity/sale/segai-womiru" target="_blank">
 							<div class="slider-wrap">
 								<span class="banner-text">
                                 <img height="500" />
@@ -759,7 +713,7 @@
 						</a>
 					</li>
 					<li style="background:#efefef;" _begintime="2018/5/31 17:47:55" _endtime="2018/8/31 23:59:59" _title="深夜食堂">
-						<a href="http://www.yiguo.com/activity/sale/systhb" target="_blank">
+						<a href="http://www.xiaoxiang.com/activity/sale/systhb" target="_blank">
 							<div class="slider-wrap">
 								<span class="banner-text">
                                 <img height="500" />
@@ -1292,7 +1246,7 @@
 								<a href="/help/ubremark.html">悠币说明</a>
 							</p>
 							<p>
-								<a href="http://www.yiguo.com/activity/sale/2998">会员等级<i class="ml5"><img src="http://img06.yiguoimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
+								<a href="http://www.xiaoxiang.com/activity/sale/2998">会员等级<i class="ml5"><img src="http://img06.xiaoxiangimg.com/e/web/170315/00941/154425/icon-new.png"></i></a>
 							</p>
 
 						</dd>
@@ -1346,7 +1300,7 @@
 								<a href="/help/quicknessrefund.html">极速退款</a>
 								<p>
 									<p>
-										<a href="http://home.yiguo.com/Trade/Advice">投诉与建议</a>
+										<a href="http://home.xiaoxiang.com/Trade/Advice">投诉与建议</a>
 									</p>
 						</dd>
 					</dl>
@@ -1366,7 +1320,7 @@
 								<a href="/help/chengxinjubao.html">诚信举报</a>
 							</p>
 							<p>
-								<a href="http://yiguo.zhiye.com/home" target="_blank" rel="nofollow">人才招聘</a>
+								<a href="http://xiaoxiang.zhiye.com/home" target="_blank" rel="nofollow">人才招聘</a>
 							</p>
 							<p>
 								<a href="/help/friendurl.html">友情链接</a>
@@ -1390,8 +1344,6 @@
 				<a href="#body" class="s-btn goTop"></a>
 			</div>
 		</div>
-		<%-- <%HttpSession httpSession =ServletActionContext.getRequest().getSession();
-		String username = httpSession.getAttribute("userInfo"); %> --%>
 		<script >
 		$(function() {
 			var username= "<%=session.getAttribute("userInfo")%>";

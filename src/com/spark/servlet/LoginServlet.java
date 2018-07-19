@@ -67,7 +67,7 @@ protected int captcha_num[] = new int[4];
 				}
 				HttpSession session = req.getSession();
 				session.setAttribute("userInfo", username);
-				req.getRequestDispatcher("success.jsp").forward(req, resp);
+				req.getRequestDispatcher("index.jsp").forward(req, resp);
 				
 			}else {
 				message = "用户名或密码错误";
