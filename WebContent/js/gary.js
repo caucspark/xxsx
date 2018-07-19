@@ -149,9 +149,8 @@ function setattr(json) {
     {
         var item=par[i];
         item.addEventListener('click', function(){
-        	console.log(pid);
-            servlet_xiaobai(item.pid);//向小白对接servlet
-        });
+            servlet_xiaobai(this.pid);//向小白对接servlet
+       });
     }
 
 
